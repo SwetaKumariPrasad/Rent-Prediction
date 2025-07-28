@@ -129,7 +129,7 @@ The screenshot of the dashboard has been added.
 - [RentPredictionHandleMissingValues.ipynb](RentPredictionHandleMissingValues.ipynb)
 - [RentPredictionVisualization.ipynb](RentPredictionVisualization.ipynb)  
 - [RentPredictionBaselineModel.ipynb](RentPredictionBaselineModel.ipynb)
-- [RentPredictionModelling.ipynb](link_to_notebook5)
+- [RentPredictionModelling.ipynb](RentPredictionModelling.ipynb)
 - [RentPredictionFutureTrend.ipynb](RentPredictionFutureTrend.ipynb)
 
 ---
