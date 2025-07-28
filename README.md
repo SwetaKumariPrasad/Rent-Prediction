@@ -1,4 +1,4 @@
-### Project Title: Exploratory Data Analysis and Baseline Modeling for Rent Prediction  
+### Project Title: Exploratory Data Analysis and Advanced Modeling for Rent Prediction  
 **Author:** Sweta Kumari Prasad  
 
 ---
@@ -8,7 +8,8 @@ This project predicts monthly rental prices across U.S. states and cities by ana
 * Thorough **EDA** uncovered geographic rent hot-spots (e.g., NY & CA) and strong correlations with list price, construction cost and seasonal terms.  
 * Feature engineering produced property-mix ratios, tier spreads, log‐scaled price fields and calendar parts.  
 * A baseline **Linear Regression (OLS)** reached **RMSE ≈ \$100** (≈ 6 % of mean rent \$1 670) with **R² ≈ 0.94**, explaining the vast majority of variance.  
-* Results form a solid springboard for ensemble and time-series models in the next phase.
+* A robust modeling pipeline, with the Stacked Ensemble achieving the best predictive performance (Test RMSE ≈ $418.72, Test R² ≈ 0.967).
+* A SARIMAX-based time-series forecasting approach providing future rent trends.
 * **Zillow Home Value Index (ZHVI):** A measure of the typical home value and market changes across a given region and housing type. It reflects the typical value for homes in the 35th to 65th percentile range. Available as a smoothed, seasonally adjusted measure and as a raw measure.
 * **Zillow Observed Rent Index (ZORI):** A smoothed measure of the typical observed market rate rent across a given region. ZORI is a repeat-rent index that is weighted to the rental housing stock to ensure representativeness across the entire market, not just those homes currently listed for-rent. The index is dollar-denominated by computing the mean of listed rents that fall into the 35th to 65th percentile range for all homes and apartments in a given region, which is weighted to reflect the rental housing stock.
 * **Zillow Observed Renter Demand Index (ZORDI):** A measure of the typical observed rental market engagement across a region. ZORDI tracks engagement on Zillow’s rental listings to proxy changes in rental demand. The metric is smoothed to remove volatility.
@@ -39,12 +40,12 @@ Objectives
 
 | Source | Key Fields |
 |--------|-----------|
-| **Zillow Housing Data** | `AllHomesRent`, tiered rents, `MedianListPrice`, ZORI |
+| **Zillow Housing Data** | `AllHomesRent`, tiered rents, `MedianListPrice`, ZORI, ZORDI |
 | **Construction & Sales** | New-construction sale price, price-per-sqft |
 | **Market Indicators** | `%SoldBelowList`, seasonal flags |
 | **Geography** | `RegionName`, `StateName` |
 
-All data were cleaned, winsorised and scaled prior to modelling.
+Data is cleaned, outliers handled, and transformed appropriately.
 
 ---
 
@@ -56,8 +57,10 @@ All data were cleaned, winsorised and scaled prior to modelling.
 | **2. Missing-Value Handling** | `RentPredictionHandleMissingValues.ipynb` | KNN imputation, drop high-NA columns, one-hot low-cardinality cats |
 | **3. EDA & Feature Engineering** | `RentPredictionVisualization.ipynb` | Skew checks, correlation heatmap, ratio & log features, seasonality parts |
 | **4. Baseline Modelling** | `RentPredictionBaselineModel.ipynb` | OLS pipeline (one-hot + scaler), Ridge grid search, residual & importance plots |
+| **5. Advanced Modeling** | `RentPredictionModelling.ipynb` | Model training and comparison (Random Forest, KNN, Stacked Ensemble), residual diagnostics |
+| **6. Future Trend Forecasting** | `RentPredictionFutureTrend_trail.ipynb` | SARIMAX-based time-series forecasts for top cities/states |
 
-Core pipeline: **merge → clean/impute → cap outliers → engineer features → OLS + Ridge sanity-check**.
+Core pipeline: **merge → clean/impute → outlier handling → feature engineering → baseline and advanced modeling → forecast future trends.**.
 
 ---
 
@@ -68,6 +71,10 @@ Core pipeline: **merge → clean/impute → cap outliers → engineer features �
 * **Top drivers:** `MedianListPrice`, `TopTier/BottomTier` ratio, `Condo/SF` ratio, log-tier rents; positive state intercepts for CA, NY, MA, WA.  
 * **Residuals:** no global bias, but heteroscedastic and mildly non-linear fan-shape.  
 * **Outlier winsorising** lowered RMSE by ≈ \$10 and halved CV variance.
+* **Stacked Ensemble:** Best predictive performance with Test RMSE ≈ $418.72, Test R² ≈ 0.967.
+* **Top predictive features:** MedianListPrice, bedroom counts (3BHK, 4BHK), SingleFamilyRent, TopTier rent.
+* **Geographic Insights:** Highest rents in NY, CA, MA, and WA.
+* **Seasonality:** Clear seasonal patterns identified through SARIMAX modeling.
 
 ---
 
