@@ -104,10 +104,10 @@ Open your Streamlit app at: NgrokTunnel: "https://<unique-id>.ngrok-free.app" ->
 Use the https link to open the dashboard in your browser.
 
 The screenshot of the dashboard has been added.
-- [Screenshot for New York](RentPredictionMergeData.ipynb)
-- [Screenshot for San Jose](RentPredictionMergeData.ipynb)
-- [Screenshot for Boston](RentPredictionMergeData.ipynb)
-- [Screenshot for San Francisco](RentPredictionMergeData.ipynb)
+- [Screenshot for New York](futureRentPredictionNY.png)
+- [Screenshot for San Jose](futureRentPredictionSJ.png)
+- [Screenshot for Boston](futureRentPredictionBoston.png)
+- [Screenshot for San Francisco](futureRentPredictionSF.png)
 
 ---
 
