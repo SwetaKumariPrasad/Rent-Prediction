@@ -130,7 +130,7 @@ The screenshot of the dashboard has been added.
 - [RentPredictionVisualization.ipynb](RentPredictionVisualization.ipynb)  
 - [RentPredictionBaselineModel.ipynb](RentPredictionBaselineModel.ipynb)
 - [RentPredictionModelling.ipynb](link_to_notebook5)
-- [RentPredictionFutureTrend.ipynb](link_to_notebook6)
+- [RentPredictionFutureTrend.ipynb](RentPredictionFutureTrend.ipynb)
 
 ---
 ##### Contact and Further Information  
