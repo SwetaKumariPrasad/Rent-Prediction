@@ -90,7 +90,7 @@ Core pipeline: **merge → clean/impute → outlier handling → feature enginee
 
 #### Outline of Project  
 
-- [RentPredictionMergeData.ipynb](link_to_notebook1)
+- [RentPredictionMergeData.ipynb](RentPredictionMergeData.ipynb)
 - [RentPredictionHandleMissingValues.ipynb](link_to_notebook2)
 - [RentPredictionVisualization.ipynb](link_to_notebook3)  
 - [RentPredictionBaselineModel.ipynb](link_to_notebook4)
