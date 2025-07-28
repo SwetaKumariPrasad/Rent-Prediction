@@ -99,7 +99,7 @@ print("🔗 Open your Streamlit app at:", public_url)
 
 4. Click the generated https://...ngrok-free.app link to access the dashboard. The output will include a line like:
 
-Open your Streamlit app at: NgrokTunnel: "https://<unique-id>.ngrok-free.app" -> "http://localhost:8501"
+Open your Streamlit app at: NgrokTunnel: "https://<unique-id>.ngrok-free.app" -> "[http://localhost:8501](https://f00c9ccf2e32.ngrok-free.app/)"
 
 Use the https link to open the dashboard in your browser.
 
