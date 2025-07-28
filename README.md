@@ -31,8 +31,8 @@ With rising housing costs and urban migration, a data-driven rent forecast suppo
 
 Objectives  
 1. Pinpoint the most influential features (housing tiers, list prices, market indicators).  
-2. Build a baseline model for rent prediction.  
-3. Lay groundwork for time-series forecasting by region.
+2. Build a modelling for rent prediction.  
+3. Interactive Streamlit dashboard visualizing rent trends and forecasts.
 
 ---
 
@@ -82,13 +82,9 @@ Core pipeline: **merge → clean/impute → outlier handling → feature enginee
 
 | Technique | Purpose |
 |-----------|---------|
-| **Random Forest** | Fast non-linear benchmark capturing high-order splits |
-| **Gradient/XGBoost** | Usually 10–20 % RMSE drop over OLS |
-| **K-Nearest Neighbours** | Simpler local-similarity baseline |
-| **StackingRegressor** | Blend OLS + XGBoost + KNN for best tabular performance |
-| **TabNet / Dense NN** | Deep-learning approach for complex interactions |
-| **SARIMA / SARIMAX** | Forecast future rent directly with seasonality |
-| **Explainable AI (SHAP, permutation)** | Interpret feature impact for tree, DL and stacked models |
+| **Additional Economic Indicators** | Enhance model performance |
+| **Extended Forecasts** | Broaden geographic coverage and forecast periods |
+| **Explainable AI (SHAP)** | Deepen model interpretability |
 
 ---
 
@@ -97,7 +93,9 @@ Core pipeline: **merge → clean/impute → outlier handling → feature enginee
 - [RentPredictionMergeData.ipynb](link_to_notebook1)
 - [RentPredictionHandleMissingValues.ipynb](link_to_notebook2)
 - [RentPredictionVisualization.ipynb](link_to_notebook3)  
-- [RentPredictionBaselineModel.ipynb](link_to_notebook4)  
+- [RentPredictionBaselineModel.ipynb](link_to_notebook4)
+- [RentPredictionModelling.ipynb](link_to_notebook5)
+- [RentPredictionFutureTrend.ipynb](link_to_notebook6)
 
 ---
 ##### Contact and Further Information  
