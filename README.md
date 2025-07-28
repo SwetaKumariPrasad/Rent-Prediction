@@ -78,6 +78,39 @@ Core pipeline: **merge → clean/impute → outlier handling → feature enginee
 
 ---
 
+#### How to Run the Dashboard
+
+This interactive dashboard lets users explore historical rent trends, model forecasts, and confidence intervals for top U.S. cities. It leverages Streamlit for the UI, matplotlib for plots, and SARIMAX models to forecast future rents. By running it, users can dynamically view how rents evolve over time, visualize forecast bands, and interact with data without diving into the notebooks. This makes results accessible to stakeholders like policymakers, investors, and renters.
+
+1. Install dependencies:
+
+pip install streamlit pyngrok pandas matplotlib statsmodels
+
+2. Start the Streamlit app:
+
+streamlit run forecast.py --server.port 8501
+
+3. Expose the app publicly (useful for Colab or remote sessions):
+
+from pyngrok import ngrok
+ngrok.set_auth_token("YOUR_NGROK_TOKEN")  # Replace with your token
+public_url = ngrok.connect(8501, "http")
+print("🔗 Open your Streamlit app at:", public_url)
+
+4. Click the generated https://...ngrok-free.app link to access the dashboard. The output will include a line like:
+
+Open your Streamlit app at: NgrokTunnel: "https://<unique-id>.ngrok-free.app" -> "http://localhost:8501"
+
+Use the https link to open the dashboard in your browser.
+
+The screenshot of the dashboard has been added.
+- [Screenshot for New York](RentPredictionMergeData.ipynb)
+- [Screenshot for San Jose](RentPredictionMergeData.ipynb)
+- [Screenshot for Boston](RentPredictionMergeData.ipynb)
+- [Screenshot for San Francisco](RentPredictionMergeData.ipynb)
+
+---
+
 #### Next Steps  
 
 | Technique | Purpose |
@@ -85,6 +118,8 @@ Core pipeline: **merge → clean/impute → outlier handling → feature enginee
 | **Additional Economic Indicators** | Enhance model performance |
 | **Extended Forecasts** | Broaden geographic coverage and forecast periods |
 | **Explainable AI (SHAP)** | Deepen model interpretability |
+| **Dashboard using streamlit** | Interactive app for users |
+
 
 ---
 
